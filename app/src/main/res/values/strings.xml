@@ -1,12 +1,38 @@
 <resources>
     <string name="app_name">TallerListview</string>
-    <string name="areas">Areas</string>
+    <string name="areas">Áreas</string>
     <string name="volumenes">Volúmenes</string>
     <string name="operaciones">Operaciones realizadas</string>
+    <string name="cuadrado">Cuadrado</string>
+    <string name="rectangulo">Rectángulo</string>
+    <string name="triangulo">Triángulo</string>
+    <string name="circulo">Círculo</string>
+    <string name="tituloArea">Área</string>
+    <string name="tituloOpciones">Opciones</string>
+    <string name="tituloCuadrado">Cuadrado</string>
+    <string name="lado">Valor de lado:</string>
+    <string name="calcular">Calcular</string>
+    <string name="borrar">Borrar</string>
+    <string name="listaOperaciones">Área del</string>
+    <string name="txtNo">No</string>
+    <string name="Operacion">Operación</string>
+    <string name="datos">Datos</string>
+    <string name="resultado">Resultado</string>
 
     <string-array name="opciones">
         <item>@string/areas</item>
         <item>@string/volumenes</item>
         <item>@string/operaciones</item>
+    </string-array>
+
+    <string-array name="area">
+        <item>@string/cuadrado</item>
+        <item>@string/rectangulo</item>
+        <item>@string/triangulo</item>
+        <item>@string/circulo</item>
+    </string-array>
+
+    <string-array name="volumen">
+        <item></item>
     </string-array>
 </resources>

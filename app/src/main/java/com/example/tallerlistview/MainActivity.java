@@ -36,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
                         intent = new Intent(MainActivity.this, Volumenes.class);
                         startActivity(intent);
                         break;
+                    case 2:
+                        intent = new Intent(MainActivity.this, OperacionesRealizadas.class);
+                        startActivity(intent);
+                        break;
                 }
             }
         });
