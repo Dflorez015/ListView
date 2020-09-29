@@ -15,7 +15,7 @@ public class AreaSoloNumero extends AppCompatActivity {
     private String area_resultado;
     private String dt ;
     private EditText valor;
-    private TextView titulo;
+    private TextView titulo, txt;
     private double resultado;
 
     @Override
@@ -24,7 +24,9 @@ public class AreaSoloNumero extends AppCompatActivity {
         setContentView(R.layout.activity_area_solo_numero);
         valor = findViewById(R.id.lblNumero);
         titulo = findViewById(R.id.txtTituloUnSoloValor);
-        dt = getString(R.string.lado);
+        dt = getString(R.string.lado)+": ";
+        txt = findViewById(R.id.txtValor);
+        txt.setText(dt);
         switch (Areas.getIndexAreaUnNumero()){
             case 0:
                 area_resultado = getString(R.string.listaOperaciones)+" "+getString(R.string.cuadrado);
@@ -37,16 +39,20 @@ public class AreaSoloNumero extends AppCompatActivity {
     }
 
     public void guardar_un_valor_area(View v){
-        resultado = Integer.parseInt(valor.getText().toString());
-        resultado = resultado * resultado;
-        if (Areas.getIndexAreaUnNumero() == 3){
-            resultado = (int) Math.round(resultado * Math.PI * 100);
-            resultado = resultado/100.0;
+        if (!valor.getText().toString().isEmpty()){
+            resultado = Integer.parseInt(valor.getText().toString());
+            resultado = resultado * resultado;
+            if (Areas.getIndexAreaUnNumero() == 3){
+                resultado = (int) Math.round(resultado * Math.PI * 100);
+                resultado = resultado/100.0;
+            }
+            String num = valor.getText().toString();
+            Realizadas r = new Realizadas(area_resultado, dt+" "+num, resultado);
+            r.guardar();
+            alerta();
+        }else {
+            valor.setError(getString(R.string.errorLabel));
         }
-        String num = valor.getText().toString();
-        Realizadas r = new Realizadas(area_resultado, dt+" "+num, resultado);
-        r.guardar();
-        alerta();
     }
 
     public void alerta(){
@@ -63,5 +69,9 @@ public class AreaSoloNumero extends AppCompatActivity {
         tituloDialogo.setTitle(getString(R.string.resultado));
         tituloDialogo.show();
 
+    }
+
+    public void borrar(View v){
+        valor.setText("");
     }
 }

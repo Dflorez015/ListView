@@ -35,11 +35,11 @@ public class Areas extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case 1:
-                        intent = new Intent(Areas.this, Rectangulo.class);
+                        intent = new Intent(Areas.this, AreaParNumeros.class);
                         startActivity(intent);
                         break;
                     case 2:
-                        intent = new Intent(Areas.this, Rectangulo.class);
+                        intent = new Intent(Areas.this, AreaParNumeros.class);
                         startActivity(intent);
                         break;
                     case 3:

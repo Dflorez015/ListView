@@ -26,13 +26,12 @@
         android:padding="40px">
 
         <TextView
-            android:id="@+id/txtValorCuadrado"
+            android:id="@+id/txtValor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="50dp"
             android:paddingTop="40dp"
             android:paddingBottom="40dp"
-            android:text="@string/lado"
             android:textAlignment="center"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -53,7 +52,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnCalcularCuadrado"
+            android:id="@+id/btnCalcular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -72,6 +71,7 @@
             android:layout_weight="1"
             android:background="#1C486A"
             android:minWidth="40dp"
+            android:onClick="borrar"
             android:text="@string/borrar"
             android:textColor="#FFFFFF" />
     </LinearLayout>
