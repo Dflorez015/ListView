@@ -3,16 +3,14 @@ package com.example.tallerlistview;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-public class AreaSoloNumero extends AppCompatActivity {
-    private String area_resultado;
+public class VolumenSoloNumero extends AppCompatActivity {
+    private String volumen_resultado;
     private String dt ;
     private EditText valor;
     private TextView titulo, txt;
@@ -21,36 +19,37 @@ public class AreaSoloNumero extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_area_solo_numero);
+        setContentView(R.layout.activity_volumen_solo_numero);
+
         valor = findViewById(R.id.lblNumero);
-        titulo = findViewById(R.id.txtTituloUnSoloValor);
+        titulo = findViewById(R.id.txtTituloVolumenUnSoloValor);
 
         txt = findViewById(R.id.txtValor);
 
-        switch (Areas.getindexAreaOpcion()){
+        switch (Volumenes.getIndexVolumenUnNumero()){
             case 0:
-                dt = getString(R.string.lado)+": ";
-                area_resultado = getString(R.string.listaOperaciones)+" "+getString(R.string.cuadrado);
+                dt = getString(R.string.radio)+": ";
+                volumen_resultado= getString(R.string.listaVolumenesDeLa)+" "+getString(R.string.esfera);
                 break;
             case 3:
-                dt = getString(R.string.radio)+": ";
-                area_resultado = getString(R.string.listaOperaciones)+" "+getString(R.string.circulo);
+                dt = getString(R.string.lado)+": ";
+                volumen_resultado = getString(R.string.listaVolumenes)+" "+getString(R.string.cubo);
                 break;
         }
-        titulo.setText(area_resultado);
+        titulo.setText(volumen_resultado);
         txt.setText(dt);
     }
 
-    public void guardar_un_valor_area(View v){
+    public void guardar_un_valor_volumen(View v){
         if (!valor.getText().toString().isEmpty()){
             resultado = Integer.parseInt(valor.getText().toString());
-            resultado = resultado * resultado;
-            if (Areas.getindexAreaOpcion() == 3){
-                resultado = (int) Math.round(resultado * Math.PI * 100);
+            resultado = Math.pow(resultado, 3);
+            if (Volumenes.getIndexVolumenUnNumero() == 0){
+                resultado = (int) Math.round((4 * resultado * Math.PI)/3 * 100);
                 resultado = resultado/100.0;
             }
             String num = valor.getText().toString();
-            Realizadas r = new Realizadas(area_resultado, dt+" "+num, resultado);
+            Realizadas r = new Realizadas(volumen_resultado, dt+" "+num, resultado);
             r.guardar();
             alerta();
         }else {
@@ -59,8 +58,8 @@ public class AreaSoloNumero extends AppCompatActivity {
     }
 
     public void alerta(){
-        final AlertDialog.Builder alert = new AlertDialog.Builder(AreaSoloNumero.this);
-        alert.setMessage(area_resultado+": "+resultado)
+        final AlertDialog.Builder alert = new AlertDialog.Builder(VolumenSoloNumero.this);
+        alert.setMessage(volumen_resultado+": "+resultado)
                 .setCancelable(false)
                 .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     @Override

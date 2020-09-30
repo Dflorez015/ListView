@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TallerListview</string>
+    <string name="areas">Areas</string>
+    <string name="volumenes">Volumes</string>
+    <string name="operaciones">Operations performed</string>
+    <string name="cuadrado">Square</string>
+    <string name="rectangulo">Rectangle</string>
+    <string name="triangulo">Triangle</string>
+    <string name="circulo">Circle</string>
+    <string name="esfera">Sphere</string>
+    <string name="cilindro">Cylinder</string>
+    <string name="cono">Cone</string>
+    <string name="cubo">Cube</string>
+    <string name="tituloArea">Area</string>
+    <string name="tituloOpciones">Options</string>
+    <string name="tituloVolumen">Volume</string>
+    <string name="lado">Side value</string>
+    <string name="radio">Radius value</string>
+    <string name="altura">Height value</string>
+    <string name="calcular">Calculate</string>
+    <string name="borrar">Clean</string>
+    <string name="txtNo">No</string>
+    <string name="Operacion">Operation</string>
+    <string name="datos">Dates</string>
+    <string name="resultado">Outcome</string>
+    <string name="errorLabel">Enter a number</string>
+    <string name="listaOperaciones">Area of</string>
+    <string name="listaVolumenes">Volume of</string>
+    <string name="listaVolumenesDeLa">Volume of the</string>
+</resources>

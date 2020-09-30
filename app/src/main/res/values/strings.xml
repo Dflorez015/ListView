@@ -3,21 +3,36 @@
     <string name="areas">Áreas</string>
     <string name="volumenes">Volúmenes</string>
     <string name="operaciones">Operaciones realizadas</string>
+
     <string name="cuadrado">Cuadrado</string>
     <string name="rectangulo">Rectángulo</string>
     <string name="triangulo">Triángulo</string>
     <string name="circulo">Círculo</string>
+
+    <string name="esfera">Esfera</string>
+    <string name="cilindro">Cilindro</string>
+    <string name="cono">Cono</string>
+    <string name="cubo">Cubo</string>
+
     <string name="tituloArea">Área</string>
     <string name="tituloOpciones">Opciones</string>
-    <string name="tituloCuadrado">Cuadrado</string>
+    <string name="tituloVolumen">Volumen</string>
+
     <string name="lado">Valor del lado</string>
+    <string name="radio">Valor del radio</string>
+    <string name="altura">Valor de la altura</string>
+
     <string name="calcular">Calcular</string>
     <string name="borrar">Borrar</string>
     <string name="listaOperaciones">Área del</string>
+    <string name="listaVolumenes">Volumen del</string>
+    <string name="listaVolumenesDeLa">Volumen de la</string>
+
     <string name="txtNo">No</string>
     <string name="Operacion">Operación</string>
     <string name="datos">Datos</string>
     <string name="resultado">Resultado</string>
+
     <string name="errorLabel">Ingrese un número</string>
 
     <string-array name="opciones">
@@ -34,6 +49,9 @@
     </string-array>
 
     <string-array name="volumen">
-        <item></item>
+        <item>@string/esfera</item>
+        <item>@string/cilindro</item>
+        <item>@string/cono</item>
+        <item>@string/cubo</item>
     </string-array>
 </resources>

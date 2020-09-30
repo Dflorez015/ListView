@@ -13,7 +13,6 @@
         android:layout_height="wrap_content"
         android:background="#1C486A"
         android:padding="20px"
-        android:text="@string/tituloCuadrado"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="24sp"

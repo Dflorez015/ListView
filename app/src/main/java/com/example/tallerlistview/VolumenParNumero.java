@@ -6,13 +6,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class AreaParNumeros extends AppCompatActivity {
-    private String area_resultado;
-    private String dt ;
+public class VolumenParNumero extends AppCompatActivity {
+    private String volumen_resultado;
+    private String dtr, dtl ;
     private EditText valorA, valorB;
     private TextView titulo, txta, txtb;
     private double resultado;
@@ -20,37 +19,39 @@ public class AreaParNumeros extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_area_par_numeros);
+        setContentView(R.layout.activity_volumen_par_numero);
         valorA = findViewById(R.id.lblNumeroA);
         valorB = findViewById(R.id.lblNumeroB);
-        titulo = findViewById(R.id.txtTituloParValores);
+        titulo = findViewById(R.id.txtTituloVolumenDosValores);
         txta = findViewById(R.id.txtValorA);
-        txta.setText(getString(R.string.lado)+" A :");
+        txta.setText(getString(R.string.radio)+":");
         txtb = findViewById(R.id.txtValorB);
-        txtb.setText(getString(R.string.lado)+" B :");
-        dt = getString(R.string.lado);
-        switch (Areas.getindexAreaOpcion()){
+        txtb.setText(getString(R.string.altura)+":");
+        dtr = getString(R.string.radio);
+        dtl = getString(R.string.altura);
+        switch (Volumenes.getIndexVolumenUnNumero()){
             case 1:
-                area_resultado = getString(R.string.listaOperaciones)+" "+getString(R.string.rectangulo);
+                volumen_resultado= getString(R.string.listaVolumenes)+" "+getString(R.string.cilindro);
                 break;
             case 2:
-                area_resultado = getString(R.string.listaOperaciones)+" "+getString(R.string.triangulo);
+                volumen_resultado = getString(R.string.listaVolumenes)+" "+getString(R.string.cono);
                 break;
         }
-        titulo.setText(area_resultado);
+        titulo.setText(volumen_resultado);
     }
 
-    public void guardar_dos_valor_area(View v){
+    public void guardar_dos_valor_volumen(View v){
         boolean txta_empty = valorA.getText().toString().isEmpty();
         boolean txtb_empty = valorB.getText().toString().isEmpty();
         if (!txta_empty && !txtb_empty){
             int a = Integer.parseInt(valorA.getText().toString());
             int b = Integer.parseInt(valorB.getText().toString());
-            resultado = a * b;
-            if (Areas.getindexAreaOpcion() == 2){
-                resultado = resultado/2;
+            resultado = (int) Math.round((Math.pow(a, 2) * b * Math.PI)*100);
+            resultado = resultado/100;
+            if (Volumenes.getIndexVolumenUnNumero() == 2){
+                resultado = resultado/3;
             }
-            Realizadas r = new Realizadas(area_resultado, dt+" A: "+a+"\n"+dt+" B: "+b, resultado);
+            Realizadas r = new Realizadas(volumen_resultado, dtr+": "+a+"\n"+dtl+": "+b, resultado);
             r.guardar();
             alerta();
         }else{
@@ -63,8 +64,8 @@ public class AreaParNumeros extends AppCompatActivity {
     }
 
     public void alerta(){
-        final AlertDialog.Builder alert = new AlertDialog.Builder(AreaParNumeros.this);
-        alert.setMessage(area_resultado+": "+resultado)
+        final AlertDialog.Builder alert = new AlertDialog.Builder(VolumenParNumero.this);
+        alert.setMessage(volumen_resultado+": "+resultado)
                 .setCancelable(false)
                 .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     @Override

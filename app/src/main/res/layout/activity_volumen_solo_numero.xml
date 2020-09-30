@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AreaSoloNumero">
+    tools:context=".VolumenSoloNumero">
 
     <TextView
-        android:id="@+id/txtTituloUnSoloValor"
+        android:id="@+id/txtTituloVolumenUnSoloValor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#1C486A"
@@ -41,6 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:width="50dp"
+            android:ems="10"
             android:inputType="number" />
 
     </LinearLayout>
@@ -58,7 +59,7 @@
             android:layout_weight="1"
             android:background="#1C486A"
             android:minWidth="50dp"
-            android:onClick="guardar_un_valor_area"
+            android:onClick="guardar_un_valor_volumen"
             android:text="@string/calcular"
             android:textColor="#FFFFFF" />
 
@@ -74,4 +75,5 @@
             android:text="@string/borrar"
             android:textColor="#FFFFFF" />
     </LinearLayout>
+
 </LinearLayout>

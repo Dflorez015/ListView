@@ -14,7 +14,7 @@ public class Areas extends AppCompatActivity {
     private String[] opciones;
     private ArrayAdapter<String> adapter;
     private Intent intent;
-    public static int indexAreaUnNumero = 0;
+    public static int indexAreaOpcion = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class Areas extends AppCompatActivity {
         lstArea.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                indexAreaUnNumero = i;
+                indexAreaOpcion = i;
                 switch (i){
                     case 0:
                         intent = new Intent(Areas.this, AreaSoloNumero.class);
@@ -51,8 +51,8 @@ public class Areas extends AppCompatActivity {
         });
     }
 
-    public static int getIndexAreaUnNumero(){
-        return indexAreaUnNumero;
+    public static int getindexAreaOpcion(){
+        return indexAreaOpcion;
     }
 
 }

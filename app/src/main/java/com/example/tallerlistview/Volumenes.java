@@ -14,6 +14,8 @@ public class Volumenes extends AppCompatActivity {
     private String[] volumenes;
     private ArrayAdapter<String> adapter;
     private Intent intent;
+    public static int indexVolumenUnNumero = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,25 +29,31 @@ public class Volumenes extends AppCompatActivity {
         lst_volumenes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                indexVolumenUnNumero = i;
                 switch (i){
                     case 0:
-                        intent = new Intent(Volumenes.this, Areas.class);
+                        intent = new Intent(Volumenes.this, VolumenSoloNumero.class);
                         startActivity(intent);
                         break;
                     case 1:
-                        intent = new Intent(Volumenes.this, Volumenes.class);
+                        intent = new Intent(Volumenes.this, VolumenParNumero.class);
                         startActivity(intent);
                         break;
                     case 2:
-                        intent = new Intent(Volumenes.this, OperacionesRealizadas.class);
+                        intent = new Intent(Volumenes.this, VolumenParNumero.class);
                         startActivity(intent);
                         break;
                     case 3:
-                        intent = new Intent(Volumenes.this, OperacionesRealizadas.class);
+                        intent = new Intent(Volumenes.this, VolumenSoloNumero.class);
                         startActivity(intent);
                         break;
                 }
             }
         });
     }
+
+    public static int getIndexVolumenUnNumero(){
+        return indexVolumenUnNumero;
+    }
+
 }

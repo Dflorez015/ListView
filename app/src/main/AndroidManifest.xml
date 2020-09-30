@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AreaParNumeros"></activity>
+        <activity android:name=".VolumenParNumero"></activity>
+        <activity android:name=".VolumenSoloNumero" />
+        <activity android:name=".AreaParNumeros" />
         <activity android:name=".AreaSoloNumero" />
         <activity android:name=".OperacionesRealizadas" />
         <activity android:name=".Volumenes" />
